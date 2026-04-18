@@ -1,2 +1,13 @@
-<h1>Courses#index</h1>
-<p>Find me in app/views/courses/index.html.erb</p>
+<h1>Student Dashboard</h1>
+<p>Current user <%= current_student.name %></p>
+
+<h2>Courses</h2>
+<ul>
+    <% @courses.each do |course| %>
+        <li>
+          <%= link_to course.title, course_path(course) %>
+        </li>
+    <% end %>
+</ul>
+
+<%# Basic layout for the student dashboard that shows the current user as well as the students courses %>

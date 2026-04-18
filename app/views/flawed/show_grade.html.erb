@@ -1,2 +1,10 @@
-<h1>Flawed#show_grade</h1>
-<p>Find me in app/views/flawed/show_grade.html.erb</p>
+<h1>Flawed Grade Page</h1>
+<p>Flawed grade page.</p>
+
+<p>Student: <%= @grade.student.name %></p>
+<p>Assignment: <%= @grade.assignment.title %></p>
+<p>Score: <%= @grade.score %></p>
+<p>Feedback: <%= @grade.feedback %></p>
+
+
+<%# all the flawed pages are the same as the normal however they dont have access controls in place %>

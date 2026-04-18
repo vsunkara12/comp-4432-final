@@ -1,2 +1,33 @@
-<h1>Students#edit</h1>
-<p>Find me in app/views/students/edit.html.erb</p>
+<h1>Edit your Profile</h1>
+
+<%= form_with model: @student, url: user_path(@student), method: :patch do |f| %>
+    <p>
+      <%= f.label :name %> 
+      <%= f.text_field :name %> 
+    </p>
+
+    <p>
+      <%= f.label :email %> 
+      <%= f.email_field :email %> 
+    </p>
+
+    <p>
+      <%= f.label :password %> 
+      <%= f.password_field :password %> 
+    </p>
+
+    <p>
+      <%= f.label :password_confirmation %> 
+      <%= f.password_field :password_confirmation %> 
+    </p>
+
+    <p>
+      <%= f.submit "Save changes to your Profile" %> 
+    </p>
+<% end %>
+
+
+<%#page used to edit a users profile if necessary which isnt really necessary but is typical of sites such as this so i included it %>
+
+ 
+

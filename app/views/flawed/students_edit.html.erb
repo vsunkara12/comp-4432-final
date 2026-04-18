@@ -1,2 +1,31 @@
-<h1>Flawed#students_edit</h1>
-<p>Find me in app/views/flawed/students_edit.html.erb</p>
+<h1>Flawed Edit Student</h1>
+<p>Flawed edit student page</p>
+
+<%= form_with model: @student, url: user_path(@student), method: :patch do |f| %>
+    <p>
+      <%= f.label :name %> 
+      <%= f.text_field :name %> 
+    </p>
+
+    <p>
+      <%= f.label :email %> 
+      <%= f.email_field :email %> 
+    </p>
+
+    <p>
+      <%= f.label :password %> 
+      <%= f.password_field :password %> 
+    </p>
+
+    <p>
+      <%= f.label :password_confirmation %> 
+      <%= f.password_field :password_confirmation %> 
+    </p>
+
+    <p>
+      <%= f.submit "Save changes to your Profile" %> 
+    </p>
+<% end %>
+
+
+<%# all the flawed pages are the same as the normal however they dont have access controls in place %>

@@ -1,2 +1,14 @@
-<h1>Grades#index</h1>
-<p>Find me in app/views/grades/index.html.erb</p>
+<h1>Grades</h1>
+
+<ul>
+  <% @grades.each do |grade| %>
+    <li>
+      <%= link_to "Grade #{grade.id}", grade_path(grade) %>
+        <%= grade.assignment.title %>
+        <%= grade.score %>
+    </li>
+  <% end %>
+</ul>
+
+
+<%# Grade index that shows a list of all the users grades as well as its title and score %>

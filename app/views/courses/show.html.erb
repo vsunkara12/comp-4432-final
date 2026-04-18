@@ -1,2 +1,13 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
+<h1>Course: <%= @course.title %></h1>
+
+<p><%= @course.description %></p>
+<p>Teacher: <%= @course.student.name %>
+
+<h2>Assignments</h2>
+<ul>
+  <% @assignments.each do |assignment| %>
+    <li><%= assignment.title %></li>
+  <% end %>
+</ul>
+
+<%# Basic layout for the course page that details the teacher and assignments %>

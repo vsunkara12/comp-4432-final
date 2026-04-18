@@ -1,2 +1,10 @@
-<h1>Flawed#admin</h1>
-<p>Find me in app/views/flawed/admin.html.erb</p>
+<h1>Flawed Admin Page</h1>
+<p>Flawed admin page.</p>
+<ul>
+  <% @students.each do |student| %>
+    <li><%= student.name %> - <%= student.email %> - <%= student.role %></li>
+  <% end %>
+</ul>
+
+
+<%# all the flawed pages are the same as the normal however they dont have access controls in place %>

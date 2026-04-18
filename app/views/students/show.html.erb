@@ -1,2 +1,10 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<h1>Student Profile</h1>
+
+<p>Name: <%= @student.name %></p>
+<p>Email: <%= @student.email %></p>
+<p>Role: <%= @student.role %></p>
+
+<%= link_to "Edit your Profile", edit_user_path(@student) %>
+
+
+<%# basic student profile page showing the users name, email, and role %>

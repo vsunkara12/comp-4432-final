@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Final</title>
+    <title>Final Project School Portal</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,33 @@
   </head>
 
   <body>
+    <div>
+      <%= link_to "Home Page", root_path %>
+
+      <% if current_student %>
+        <%= link_to "Student Dashboard", student_dashboard_path %>
+        <%= link_to "Grades", grades_path %>
+        <%= link_to "Student Profile", user_path(current_student) %>
+      <% if current_student.role == "admin" %>
+        <%= link_to "Admin Portal", admin_path %>
+      <% end %>
+        <%= button_to "Sign Off", signoff_path, method: :delete  %>
+      <% else %>
+        <%= link_to "Create Account", make_acct_path %>
+        <%= link_to "Sign In", signin_path %>
+      <% end %>
+    </div>
+
+    <% flash.each do |type, message| %>
+      <p><%= message %></p>
+    <% end %>
+        
+
+
+
+
     <%= yield %>
   </body>
 </html>
+
+<%# overall structure for the app/site, creates the buttons and changes what is seen depending on whether a user is logged in or not %>
